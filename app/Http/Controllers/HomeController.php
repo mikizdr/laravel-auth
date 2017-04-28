@@ -13,6 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        // middleware auth is assigned in Kernel.php
         $this->middleware('auth');
     }
 
