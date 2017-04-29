@@ -17,11 +17,23 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        // check if we are logged in
-        if (Auth::guard($guard)->check()) {
-            // if we are logged in then it will be redirected to the home page
-            return redirect('/home');
+        // check if we are logged in as user or as admin
+        switch ($guard) {
+            case 'admin':
+                if (Auth::guard($guard)->check()) {
+                    // if we are logged in as admin we will be redirected to the admin home page
+                    return redirect('admin/home');
+                }
+                break;
+            
+            default:
+                if (Auth::guard($guard)->check()) {
+                    // if we are logged in as user we will be redirected to the user home page
+                    return redirect('/home');
+                }
+                break;
         }
+
         // if we are not logged in
         return $next($request);
     }

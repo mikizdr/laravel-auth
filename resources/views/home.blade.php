@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">User Dashboard</div>
 
                 <div class="panel-body">
-                    Hey! You are logged in!
+                    Hey! You are logged in as User - {{ Auth::user()->name.' '.Auth::user()->lastname }}!
                 </div>
             </div>
         </div>
