@@ -81,7 +81,8 @@ class RegisterController extends Controller
         $thisUser = User::findOrFail($user->id);
         $this->sendEmail($thisUser);
 
-
+        // without this return we could not send an email
+        return $user;
 
     }
 
@@ -104,5 +105,15 @@ class RegisterController extends Controller
     public function verifyEmailFirst()
     {
         return view('email.verifyEmailFirst');
+    }
+
+    /**
+     * Show verifyEmailFirst.blade.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sendEmailDone()
+    {
+        //return view('email.verifyEmailFirst');
     }
 }
