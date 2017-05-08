@@ -15,6 +15,7 @@ class EditorController extends Controller
     {
         // middleware auth is assigned in Kernel.php
         $this->middleware('auth:admin');
+        $this->middleware('editor');
     }
 
     public function index()
