@@ -73,6 +73,14 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'verifyToken' => Str::random(40),
         ]);
+
+        // create an array with information of just created user
+        // with that information we call sendEmail fuction
+        $thisUser = User::findOrFail($user->id);
+        $this->sendEmail($thisUser);
+
+
+
     }
 
     /**
