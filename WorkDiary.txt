@@ -2,3 +2,4 @@
 1. Create new file RegistersAdmins.php in Illuminate\Foundation\Auth\RegistersAdmins; how the route admin/register could work.
 
 2. Function register in RegistersUsers.php login users after registration. 
+3. Add the nxt line in RegistersUsers.php in register function: return redirect(route('veifyEmailFirst'));
