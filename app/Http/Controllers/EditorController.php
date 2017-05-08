@@ -18,6 +18,11 @@ class EditorController extends Controller
         $this->middleware('editor');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */    
     public function index()
     {
         return view('admin.editor');

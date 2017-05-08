@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Middleware;
-use Auth;
 
 use Closure;
+use Auth;
 
 class EditorMiddleware
 {
@@ -22,6 +22,6 @@ class EditorMiddleware
             }
         }
         
-        return $redirect('');
+        return redirect('');
     }
 }
