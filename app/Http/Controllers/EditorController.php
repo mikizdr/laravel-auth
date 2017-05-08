@@ -15,7 +15,8 @@ class EditorController extends Controller
     {
         // middleware auth is assigned in Kernel.php
         $this->middleware('auth:admin');
-        $this->middleware('editor');
+        // allow admin role to go to admin/test page
+        $this->middleware('editor', ['except' => 'test']);
     }
 
     /**
@@ -26,5 +27,15 @@ class EditorController extends Controller
     public function index()
     {
         return view('admin.editor');
+    }
+
+    /**
+     * Show the test page.
+     *
+     * @return \Illuminate\Http\Response
+     */    
+    public function test()
+    {
+        return view('admin.test');
     }
 }
