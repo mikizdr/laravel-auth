@@ -38,3 +38,4 @@ Route::get('admin/test', 'EditorController@test');
 
 // verifyEmailFirst route for the registration provess
 Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
+Route::get('verify/{email}/{verifyToken}','Auth\RegisterController@sendEmailDone')->name('sendEmailDone');
