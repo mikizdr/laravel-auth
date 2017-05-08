@@ -8,7 +8,7 @@
                 <div class="panel-heading">Editor Dashboard</div>
 
                 <div class="panel-body">
-                    Hey! You are logged in as editor - {{ Auth::user()->name.' '.Auth::user()->lastname }}!
+                    Hey! You are logged in as editor - 
                 </div>
             </div>
         </div>        
