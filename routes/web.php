@@ -31,3 +31,6 @@ Route::get('admin-password/reset/{token}', 'Admin\ResetPasswordController@showRe
 // MY TRY: to create routes to register user as admin
 Route::get('admin/register', 'Admin\RegisterController@showRegistrationForm')->name('admin.register');
 Route::POST('admin/register', 'Admin\RegisterController@register');
+
+// editor routes
+Route::get('admin/editor', 'EditorController@index');
