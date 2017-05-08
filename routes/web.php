@@ -35,3 +35,6 @@ Route::POST('admin/register', 'Admin\RegisterController@register');
 // editor routes
 Route::get('admin/editor', 'EditorController@index');
 Route::get('admin/test', 'EditorController@test');
+
+// verifyEmailFirst route for the registration provess
+Route::get('verifyEmailFirst', 'Auth\RegisterController@verifyEmailFirst')->name('verifyEmailFirst');
