@@ -34,3 +34,4 @@ Route::POST('admin/register', 'Admin\RegisterController@register');
 
 // editor routes
 Route::get('admin/editor', 'EditorController@index');
+Route::get('admin/test', 'EditorController@test');
