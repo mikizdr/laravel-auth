@@ -21,7 +21,8 @@ class AdminMiddleware
                 return $next($request);
             }
         }
-        
-        return redirect('/');
+
+        // if admin has not an admin role redirect him to
+        return redirect('admin/editor');
     }
 }
