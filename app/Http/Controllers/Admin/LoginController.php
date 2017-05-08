@@ -50,6 +50,14 @@ class LoginController extends Controller
 
         $this->clearLoginAttempts($request);
 
+        foreach ($this->guard()->user()->role as $role) {
+            if ($role -> name == 'admin') {
+                return redirect('admin/home');
+            } elseif ($role->name == 'editor') {
+                return redirect('admin/editor');
+            }
+        }
+
     }
 
     /**
