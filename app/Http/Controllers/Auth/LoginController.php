@@ -48,6 +48,6 @@ class LoginController extends Controller
     {
         // define the way of authentication
         //return $request->only($this->username(), 'password');
-        return ['email'=>$this->username(), 'password'=>$request->password, 'status'=>'1'];
+        return ['email'=>$request->{$this->username()}, 'password'=>$request->password, 'status'=>'1'];
     }
 }
