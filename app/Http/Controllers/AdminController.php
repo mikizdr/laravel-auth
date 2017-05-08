@@ -15,6 +15,7 @@ class AdminController extends Controller
     {
         // middleware auth is assigned in Kernel.php
         $this->middleware('auth:admin');
+        $this->middleware('admin');
     }
 
     /**
