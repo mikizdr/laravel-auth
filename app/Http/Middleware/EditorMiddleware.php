@@ -23,6 +23,6 @@ class EditorMiddleware
         }
         
         // if admin is not an editor and tries to reach a certain forbiden route, redirect him to
-        return redirect('admin/home');
+        return redirect('');
     }
 }
