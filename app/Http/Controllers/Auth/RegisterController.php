@@ -76,6 +76,17 @@ class RegisterController extends Controller
     }
 
     /**
+     * Send an email to the email of just regitrated user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sendEmail($thisUser)
+    {
+        Mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
+    }
+
+
+    /**
      * Show verifyEmailFirst.blade.
      *
      * @return \Illuminate\Http\Response
